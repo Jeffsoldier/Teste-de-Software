@@ -1,0 +1,34 @@
+            #language: pt
+
+            Funcionalidade: Tela de Login
+            Como Cliente da EBAC-SHOP
+            Quero fazer o login (autenticação) na plataforma
+            Para visualizar meus pedidos
+
+            Contexto:
+            Dado que eu acesse a página de autenticação da loja EBAC-SHOP
+
+            Cenário: Autenticação válida
+            Quando eu digitar o usuário "jefferson"
+            E a senha "senha"
+            Então deve ser direcionado para a tela de checkout
+
+            Cenário: Autenticação inválida
+            Quando eu digitar o usuário "joaokleber"
+            E a senha "senha"
+            Então deve exibir uma mensagem de alerta: "Usuario ou Senha inválidos"
+
+            Esquema do Cenário: Autenticar multiplos usuários
+            Quando eu digitar o <usuario>
+            E a <senha>
+            Então deve ser direcionado para a tela de checkout
+
+            Exemplos:
+            | usuario                       | senha        |
+            | "jefferson"                   | "senha"      |
+            | "jefferson@ebac.com.br"       | "senha""     |
+            | "Joaquina-Maria@gmail.com"    | "Cirilo2022" |
+            | "Joaosantossilva@outlook.com" | "Jss2022"    |
+            | "catarinacatrina@hotmail.com" | "Ccat2022"   |
+            | "pozedorodo@bol.com.br"       | "Poze2022"   |
+            | "cachorrocaramelo@icloud.com" | "Caramelo"   |
