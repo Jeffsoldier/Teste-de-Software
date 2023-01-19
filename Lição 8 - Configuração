@@ -1,0 +1,38 @@
+#language: pt
+
+Funcionalidade: Configurar Produto
+Como cliente da EBAC-SHOP
+Quero configurar meu produto com meu tamanho e gosto
+E escolher a quantidade
+Para depois inserir no carrinho
+
+Contexto: 
+Dado que eu acesse o produto na página da EBAC-SHOP
+
+Cenário: Seleção do Produto
+Quando eu escolher a quantidade
+E o tamanho
+E a cor
+Então deve permitir que o produto vá para o carrinho
+
+Cenário: Seleção do Produto sem cor
+Quando eu escolher a quantidade
+E o tamanho
+Então deve exibir a mensagem de alerta: "Selecione a Cor"
+
+Cenário: Seleção do Produto sem tamanho
+Quando eu escolher a quantidade
+E a cor
+Então deve exibir a mensagem de alerta: "Selecione o tamanho"
+
+Cenário: Seleção do Produto sem quantidade
+Quando eu escolher o tamanho
+E a cor
+Então deve exibir a mensagem de alerta: "Selecione a quantidade"
+
+Cenário: Limpar dados selecionados
+Quando eu escolher o tamanho
+E a quantidade
+E a cor
+E clicar em Limpar
+Então a tela de seleção deve voltar ao estado original
